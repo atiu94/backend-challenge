@@ -58,6 +58,8 @@ function getUserProfile(username) {
                 resp = res(401, "Authorization error")
             } else if(response.statusCode === 500) {
                 resp = res(500, "Server error")
+            } else {
+                resp = res(500, error.message)
             }
         }
         // Time log for monitoring
