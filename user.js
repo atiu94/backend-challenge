@@ -36,6 +36,8 @@ function getUserProfile(username, callback) {
                 resp = res(401, "Authorization error")
             } else if(response.statusCode === 500) {
                 resp = res(500, "Server error")
+            } else {
+                resp = res(500, error.message, error)
             }
         }
         console.log(resp)
